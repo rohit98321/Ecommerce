@@ -2,6 +2,11 @@ import axios from "../../api/config"
 import { toast } from "react-toastify";
 import {loginuser} from '../reducers/UserSlice'
 import { logoutuser } from "../reducers/UserSlice";
+import { useNavigate } from "react-router-dom";
+
+
+
+    
 
 
 export const asyncregisteruser=(user) => async (dispatch,getstate)=>{
@@ -11,6 +16,30 @@ export const asyncregisteruser=(user) => async (dispatch,getstate)=>{
        const res= await axios.post("/users",user)
        console.log(res.data);
        toast.success("successfully registered")
+
+
+
+    } catch (error) {
+        console.log(error);
+        
+    }
+
+}
+
+
+export const asynccurrentruser=() => async (dispatch,getstate)=>{
+
+    try {
+
+      const user=JSON.parse(localStorage.getItem("user"));
+
+      if(user){
+
+          dispatch(loginuser(user))
+         
+      }else{
+        console.log("user not logged in");
+      }
 
 
 

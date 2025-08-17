@@ -3,9 +3,22 @@ import MainRoutes from './routes/MainRoutes'
 import Nav from './nav/Nav'
 import { useDispatch } from 'react-redux'
 
+import { asyncgetproducts } from './Redux/actions/ProdcutAction'
+import { asynccurrentruser } from './Redux/actions/UserAction'
+import { useNavigate } from 'react-router-dom'
+
 const App = () => {
 
-  
+  const dispatch = useDispatch()
+  const navigate=useNavigate()
+
+
+  useEffect(() => {
+    dispatch(asyncgetproducts())
+    dispatch(asynccurrentruser())
+    navigate("/")
+
+  }, [])
 
 
 

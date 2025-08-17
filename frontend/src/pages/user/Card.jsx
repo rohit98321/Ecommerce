@@ -29,7 +29,7 @@ const Card = ({ product }) => {
       <h2 className="text-lg font-semibold mb-1">{title}</h2>
 
       {/* Description */}
-      <p className="text-sm text-gray-600 mb-2 line-clamp-2">{description}</p>
+      <p className="text-sm text-gray-600 mb-2 line-clamp-1">{description}</p>
 
       {/* Price + Button */}
       <div className="flex items-center justify-between mt-auto">

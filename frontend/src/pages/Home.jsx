@@ -1,20 +1,17 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { loadProduct } from '../Redux/reducers/ProductSlice'
-import { asyncgetproducts } from '../Redux/actions/ProdcutAction'
+
 import Card from '../pages/user/Card'
+
 
 const Home = () => {
 
-  const dispatch = useDispatch()
+  
   const user=useSelector((state)=>state.user.users)
   console.log( "user",user);
 
 
-  useEffect(() => {
-    dispatch(asyncgetproducts())
-
-  }, [user])
+ 
 
   const data=useSelector((state)=>state.product.products)
   console.log(data);

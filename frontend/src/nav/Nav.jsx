@@ -6,9 +6,8 @@ const Nav = () => {
 
 
       const data=useSelector((state)=> state.user.users)
-      console.log(data.isAdmin);
-      const localdata=JSON.parse(localStorage.getItem("user"));
-      console.log("form nav",localdata);
+      
+      
 
   return (
     <div className='flex justify-center items-center gap-6'>

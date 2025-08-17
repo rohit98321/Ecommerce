@@ -27,7 +27,7 @@ const MainRoutes = () => {
             <Route path='/user/setting' element={ <Auth> <Setting/> </Auth>} />
             
             <Route path='admin/createproduct' element={<Auth> <CreateProduct/> </Auth>} />
-            <Route path="singleproduct/:id" element={<AdminAuth> <SingleProduct/> </AdminAuth>} />
+            <Route path="singleproduct/:id" element={ <SingleProduct/> } />
            
 
         </Routes>

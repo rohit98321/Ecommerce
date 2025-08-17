@@ -12,6 +12,7 @@ const SingleProduct = () => {
   console.log(id);
 
   const data = useSelector((state) => state.product.products);
+  const user=useSelector((state)=>state.user.users)
   const product = data.find((product) => product.id == id);
   console.log(product);
   const dispatch = useDispatch();
@@ -45,6 +46,10 @@ const SingleProduct = () => {
 
   return (
     <div className="flex w-screen gap-10 mt-20 items-center justify-evenly">
+
+       { user.isAdmin
+       ? 
+      <div className="flex gap-10">
       <motion.div
         className="bg-[#1C352D] rounded-2xl shadow-md p-4 w-[500px] h-[500px] cursor-pointer hover:shadow-xl transition-shadow flex flex-col"
         whileHover={{ scale: 1.05 }}
@@ -66,7 +71,7 @@ const SingleProduct = () => {
         <h2 className="text-lg font-semibold mb-1">{product?.title}</h2>
 
         {/* Description */}
-        <p className="text-sm text-gray-600 mb-2 line-clamp-2">
+        <p className="text-sm text-gray-600 mb-2 line-clamp-1">
           {product?.description}
         </p>
 
@@ -151,6 +156,60 @@ const SingleProduct = () => {
           Delete Product
         </button>
       </form>
+
+      </div>
+      :
+
+      //user view
+      <motion.div
+      className="bg-[#1C352D] rounded-2xl shadow-md p-4 w-[1100px]  h-[550px] cursor-pointer hover:shadow-xl transition-shadow flex justify-center items-center"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      {/* Product Image */}
+      <div className="w-1/2 h-[500px] bg-gray-200 rounded-xl mb-4 overflow-hidden">
+        <img
+          src={product?.image}
+          alt={product?.image}
+          className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+        />
+      </div>
+
+      {/* Title + description + price + button */}
+       <div className="flex flex-col items-center justify-center w-full gap-4 h-[400px]" >
+
+
+            {/* title + description  */}
+      <div className=" h-[600px] w-[700px] p-3">
+      <h2 className=" font-semibold mx-auto text-5xl">{product?.title}</h2>
+
+      {/* Description */}
+      <p className="text-2xl text-[#E4EFE7] my-4 ">
+        {product?.description}
+      </p>
+            </div>
+      {/* Price + Button */}
+      <div className=" w-[600px]  items-center justify-between flex   mt-auto">
+        <span className="text-3xl font-bold text-green-600">
+          ₹{product?.price}
+        </span>
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.05 }}
+          className="bg-[#239BA7] text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
+        >
+          Add to Cart
+        </motion.button>
+      </div>
+      </div>
+    </motion.div>
+      }
+      
+
+
     </div>
   );
 };
