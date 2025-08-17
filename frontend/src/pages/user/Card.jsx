@@ -1,13 +1,41 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { nanoid } from "nanoid";
+import { asyncorderplace } from "../../Redux/actions/OrderAction";
 
 const Card = ({ product }) => {
   console.log(product);
   const { title, image, price, description,id} = product;
+  const user=useSelector((state)=>state.user.users)
+
+  const dispatch=useDispatch();
+
+
+
+  const productdetials={
+    userid:user.id,
+    title:title,
+    image:image,
+    price:price,
+  }
+
+
+
+    const orderHandler=(order)=>{
+      order.id=nanoid()
+      order.quantity=1
+      console.log( "orderDetails",order);
+      dispatch(asyncorderplace(order));
+      
+        
+    }
 
   return (
-    <Link to={`singleproduct/${id}`} >
+    <Link 
+     
+    to={`singleproduct/${id}`} >
     <motion.div
       className="bg-[#1C352D] rounded-2xl shadow-md p-4 w-72 cursor-pointer hover:shadow-xl transition-shadow flex flex-col"
       whileHover={{ scale: 1.05 }}
@@ -35,6 +63,7 @@ const Card = ({ product }) => {
       <div className="flex items-center justify-between mt-auto">
         <span className="text-xl font-bold text-green-600">₹{price}</span>
         <motion.button
+          onClick={()=>orderHandler(productdetials) }
           whileTap={{ scale: 0.9 }}
           whileHover={{ scale: 1.05 }}
           className="bg-[#239BA7] text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"

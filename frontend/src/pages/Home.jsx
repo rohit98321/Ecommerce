@@ -25,7 +25,7 @@ const Home = () => {
 
 
   return (
-    <div className='flex gap-10 p-10 flex-wrap'>{render}</div>
+    <div className='flex gap-10 p-10 my-[10px] flex-wrap'>{render}</div>
   )
 }
 
