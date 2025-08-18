@@ -13,6 +13,13 @@
       "email": "rohit@gmail.com",
       "password": "rohit",
       "isAdmin": false
+    },
+    {
+      "id": "DKKcggJ969t5o9Ud9lbms",
+      "username": "padma bai",
+      "email": "padma@gmail.com",
+      "password": "padma",
+      "isAdmin": false
     }
   ],
   "products": [
@@ -61,12 +68,12 @@
   ],
   "orders": [
     {
-      "id": "n77CQ3VAVn8hzY6EtTZSG",
+      "id": "QyOpfkouHTVLAPlTI8sAy",
       "userid": "PUrk1zzQWfRBhc2NSe7qf",
-      "title": "rocket toy",
-      "image": "https://m.media-amazon.com/images/I/619xKfHwCSL.jpg",
-      "price": "500",
-      "quantity": 1
+      "title": "krishn ji",
+      "image": "https://i.pinimg.com/736x/3f/0b/2d/3f0b2d80a6d2dd01d6ac4502af594530.jpg",
+      "price": "0000",
+      "quantity": 4
     }
   ]
 }

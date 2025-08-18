@@ -27,7 +27,7 @@ const Login = () => {
   };
 
   return (
-    <div className="border w-[600px] my-[100px] h-[600px] p-10 rounded bg-[#1C352D] text-[#FBF3D5]">
+    <div className="border w-[600px]  h-[600px] p-10 rounded bg-[#1C352D] text-[#FBF3D5]">
       <form
         className="flex flex-col gap-5"
         onSubmit={handleSubmit(loginHandler)}

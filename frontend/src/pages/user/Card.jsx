@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "nanoid";
 import { asyncorderplace } from "../../Redux/actions/OrderAction";
@@ -8,6 +8,7 @@ import { asyncorderplace } from "../../Redux/actions/OrderAction";
 const Card = ({ product }) => {
   console.log(product);
   const { title, image, price, description,id} = product;
+  const productid=useParams()
   const user=useSelector((state)=>state.user.users)
 
   const dispatch=useDispatch();
@@ -24,10 +25,16 @@ const Card = ({ product }) => {
 
 
     const orderHandler=(order)=>{
-      order.id=nanoid()
-      order.quantity=1
-      console.log( "orderDetails",order);
-      dispatch(asyncorderplace(order));
+
+    
+        
+        console.log("order ", order);
+       
+        order.id=nanoid()
+        order.quantity=1
+        console.log( "orderDetails",order);
+        dispatch(asyncorderplace(order));
+      
       
         
     }
@@ -65,6 +72,7 @@ const Card = ({ product }) => {
         <motion.button
           onClick={()=>orderHandler(productdetials) }
           whileTap={{ scale: 0.9 }}
+          type="button"
           whileHover={{ scale: 1.05 }}
           className="bg-[#239BA7] text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
           >

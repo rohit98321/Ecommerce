@@ -10,6 +10,7 @@ import SingleProduct from '../pages/SingleProduct'
 import Auth from './Auth'
 import AdminAuth from "./AdminAuth"
 import Order from '../pages/user/Order'
+import OrderCard from '../pages/user/OrderCard'
 
 
 const MainRoutes = () => {
@@ -27,6 +28,7 @@ const MainRoutes = () => {
 
             <Route path='/user/setting' element={ <Auth> <Setting/> </Auth>} />
             <Route path='/user/order' element={ <Auth> <Order/> </Auth>} />
+            <Route path='/user/order/ordercard/:id' element={ <Auth> <OrderCard/> </Auth>} />
             
             <Route path='admin/createproduct' element={<Auth> <CreateProduct/> </Auth>} />
             <Route path="singleproduct/:id" element={ <SingleProduct/> } />

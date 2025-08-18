@@ -6,7 +6,7 @@ const Nav = () => {
   const data = useSelector((state) => state.user.users);
 
   return (
-    <div className="flex justify-center w-screen h-20  items-center  gap-6 fixed bg-[#222831] z-20">
+    <div className="flex justify-center w-screen h-20  items-center  gap-6 bg-[#222831] z-20">
       <NavLink
         to={"/"}
         className={(e) => (e.isActive ? "text-amber-600" : null)}

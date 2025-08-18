@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { asyncgetproducts } from './Redux/actions/ProdcutAction'
 import { asynccurrentruser } from './Redux/actions/UserAction'
 import { useNavigate } from 'react-router-dom'
+import { asyncgetorders } from './Redux/actions/OrderAction'
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
   useEffect(() => {
     dispatch(asyncgetproducts())
     dispatch(asynccurrentruser())
+    dispatch(asyncgetorders())
     navigate("/")
 
   }, [])
@@ -23,7 +25,7 @@ const App = () => {
 
 
   return (
-    <div className='text-2xl py-[50px ] flex flex-col justify-start w-screen h-screen  text-[#FAF9EE] bg-[#222831]'>
+    <div className='text-2xl  flex flex-col justify-start w-screen h-screen  text-[#FAF9EE] bg-[#222831]'>
 
       <Nav/>
       <MainRoutes/>
