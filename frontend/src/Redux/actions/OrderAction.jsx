@@ -86,7 +86,8 @@ export const  asyncorderplace=(order)=> async (dispatch,getstate)=>{
               
                const user=getstate().user.users;
                const od=getstate().order.orders;
-               console.log("user.id and orders.userid",user.id ,od);
+               console.log("user.id and orders.userid",user.id ,od.userid);
+
                const existorder=od.find((o) => user.id == o.userid && o.title===order.title)
                console.log("exist orders",existorder);
 

@@ -20,6 +20,27 @@
       "email": "padma@gmail.com",
       "password": "padma",
       "isAdmin": false
+    },
+    {
+      "id": "F7XnfetpL99bjF1PzFAzS",
+      "username": "sonthl",
+      "email": "sandy@gmail.com",
+      "password": "rs;;f",
+      "isAdmin": false
+    },
+    {
+      "id": "bbHlMBwCZfikKxqHH8SIK",
+      "username": "sdfsdf",
+      "email": "rohitgupta13hai@gmail.com",
+      "password": "sfdf",
+      "isAdmin": false
+    },
+    {
+      "id": "njpYJnD0LHmSpM9GTvmM3",
+      "username": "montu",
+      "email": "montu@gmail.com",
+      "password": "montu",
+      "isAdmin": false
     }
   ],
   "products": [
@@ -108,22 +129,5 @@
       "description": "Experience timeless elegance with this premium hand watch, crafted to perfection for those who value style and precision. Featuring a sleek design, durable stainless-steel body, and a crystal-clear scratch-resistant glass, it perfectly blends luxury with comfort. The advanced quartz movement ensures accurate timekeeping, while the water-resistant build makes it suitable for everyday wear. Whether for a business meeting, casual outing, or special occasion, this watch is more than just a timepiece – it’s a statement of sophistication"
     }
   ],
-  "orders": [
-    {
-      "id": "S2i2SPOGq2tCh8eigJA8Z",
-      "userid": "PUrk1zzQWfRBhc2NSe7qf",
-      "title": "sfsfsf",
-      "image": "https://images.unsplash.com/photo-1746483966037-c3c9e6374e08?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "price": "343",
-      "quantity": 2
-    },
-    {
-      "id": "ReN3yspOZwPr_BW5mYs9I",
-      "userid": "PUrk1zzQWfRBhc2NSe7qf",
-      "title": "rocket toy",
-      "image": "https://m.media-amazon.com/images/I/619xKfHwCSL.jpg",
-      "price": "500",
-      "quantity": 1
-    }
-  ]
+  "orders": []
 }

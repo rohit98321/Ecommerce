@@ -44,7 +44,7 @@ const Setting = () => {
   }
 
   return (
-    <div className="w-[500px]">
+    <div className="w-[550px] mx-auto mt-5 border p-10 bg-[#1C352D] box-content">
       <form
         className="flex flex-col gap-10 overflow-y-auto"
         onSubmit={handleSubmit(UpdateuserHandler)}

@@ -13,9 +13,24 @@ export const asyncregisteruser=(user) => async (dispatch,getstate)=>{
 
     try {
 
-       const res= await axios.post("/users",user)
-       console.log(res.data);
-       toast.success("successfully registered")
+
+       
+        
+        const {data}=await axios.get("/users")
+      
+
+        const existuser=data.find((banda) => banda.email == user.email )
+        
+        console.log(existuser);
+        if(!existuser){
+
+            const res= await axios.post("/users",user)
+            console.log(res.data);
+            toast.success("successfully registered")
+        }
+        else toast.error("user already exist")
+
+
 
 
 
