@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import OrderCard from './OrderCard'
 import { Link } from 'react-router-dom'
+import TotalOrders from './TotalOrders'
 
 const Order = () => {
 
@@ -22,10 +23,11 @@ const Order = () => {
 
 
   return (
-    <div>
-
+    <div className='flex flex-col'>
+        
         {render}
 
+        <TotalOrders order={order}/>
        
 
     </div>
