@@ -25,7 +25,7 @@ const App = () => {
 
 
   return (
-    <div className='text-2xl  flex flex-col justify-start w-screen h-screen  text-[#FAF9EE] bg-[#222831]'>
+    <div className='text-2xl  flex flex-col justify-start w-screen h-full  text-[#FAF9EE] bg-[#222831]'>
 
       <Nav/>
       <MainRoutes/>

@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "nanoid";
 import { asyncorderplace } from "../../Redux/actions/OrderAction";
+import { toast } from "react-toastify";
 
 const Card = ({ product }) => {
   console.log(product);
@@ -34,15 +35,14 @@ const Card = ({ product }) => {
         order.quantity=1
         console.log( "orderDetails",order);
         dispatch(asyncorderplace(order));
+        toast.success(`${order.title } Added to carts`)
       
       
         
     }
 
   return (
-    <Link 
-     
-    to={`singleproduct/${id}`} >
+   
     <motion.div
       className="bg-[#1C352D] rounded-2xl shadow-md p-4 w-72 cursor-pointer hover:shadow-xl transition-shadow flex flex-col"
       whileHover={{ scale: 1.05 }}
@@ -79,8 +79,11 @@ const Card = ({ product }) => {
           Add to Cart
         </motion.button>
       </div>
+      <Link  className="text-sm text-blue-400"  to={`singleproduct/${id}`} >more details </Link>
     </motion.div>
-          </Link>
+
+
+         
   );
 };
 

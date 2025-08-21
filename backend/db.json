@@ -41,6 +41,13 @@
       "email": "montu@gmail.com",
       "password": "montu",
       "isAdmin": false
+    },
+    {
+      "id": "niq-QkIznaBdGEQewtymD",
+      "username": "kartik gupta",
+      "email": "kartik@gmail.com",
+      "password": "kartik",
+      "isAdmin": false
     }
   ],
   "products": [

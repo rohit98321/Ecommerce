@@ -1,16 +1,20 @@
+import {lazy} from "react"
 import React from 'react'
 import {Route,Routes} from "react-router-dom"
-import Home from "../pages/Home"
-import Login from "../pages/Login"
-import Register from '../pages/Register'
-import PageNotFound from '../pages/PageNotFound'
-import Setting from '../pages/Setting'
-import CreateProduct from '../pages/admin/CreateProduct'
-import SingleProduct from '../pages/SingleProduct'
-import Auth from './Auth'
+
+
+
+const Home=lazy(()=> import("../pages/Home"))
+const Login=lazy(()=> import("../pages/Login"))
+const Register=lazy(()=> import('../pages/Register'))
+const PageNotFound=lazy(()=> import('../pages/PageNotFound'))
+const Setting=lazy(()=> import('../pages/Setting'))
+const CreateProduct=lazy(()=> import('../pages/admin/CreateProduct'))
+const SingleProduct=lazy(()=> import('../pages/SingleProduct'))
+const Auth=lazy(()=> import('./Auth'))
+const Order=lazy(()=> import('../pages/user/Order'))
+const OrderCard=lazy(()=> import('../pages/user/OrderCard'))
 import AdminAuth from "./AdminAuth"
-import Order from '../pages/user/Order'
-import OrderCard from '../pages/user/OrderCard'
 
 
 const MainRoutes = () => {
@@ -23,9 +27,9 @@ const MainRoutes = () => {
             <Route path='/register' element={<Register/>} />
             <Route path='*' element={<PageNotFound/>} />
 
-            //authenticate routes
            
 
+            //authenticate routes
             <Route path='/user/setting' element={ <Auth> <Setting/> </Auth>} />
             <Route path='/user/order' element={ <Auth> <Order/> </Auth>} />
             <Route path='/user/order/ordercard/:id' element={ <Auth> <OrderCard/> </Auth>} />

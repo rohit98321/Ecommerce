@@ -15,22 +15,31 @@ const Nav = () => {
       </NavLink>
 
       {data.isAdmin && (
+
+        <>
         <NavLink
           to={"admin/createproduct"}
           className={(e) => (e.isActive ? "text-amber-600" : null)}
-        >
+          >
           Create Product
         </NavLink>
+
+       
+
+          </>
+        
       )}
 
       {data ? (
         <>
-          <NavLink
+
+        {!data.isAdmin && <NavLink
             to={"/user/order"}
             className={(e) => (e.isActive ? "text-amber-600" : null)}
           >
-            Order
-          </NavLink>
+            Cart
+          </NavLink> }
+          
           <NavLink
             to={"/user/setting"}
             className={(e) => (e.isActive ? "text-amber-600" : null)}
